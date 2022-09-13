@@ -14,7 +14,7 @@ export default function MappedMoon() {
   return (
     <>
         <Sphere visible args={[1.2, 100, 200]} scale={2}>
-            <meshPhongMaterial map={colorMap} bumpMap={moonBumpMap} roughness={5} bumpScale={0.01}/>
+            <meshPhongMaterial map={colorMap} bumpMap={moonBumpMap} roughness={5} bumpScale={0.00}/>
         </Sphere>
     </>
   )
