@@ -3,11 +3,15 @@ import { Environment, OrbitControls, OrthographicCamera, Preload,mesh } from "@r
 import { Canvas } from "@react-three/fiber";
 import Moon from "./components/mappedMoon";
 import Stars from "./components/stars";
+import MainPage from './MainPage';
 const App = () => {
 
   return (
     <>
-    
+    {/* <div className='app'>
+
+    <MainPage/>
+    </div> */}
       <div className="w-full bg-black h-screen">
         
             

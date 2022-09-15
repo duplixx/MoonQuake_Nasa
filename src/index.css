@@ -1,9 +1,120 @@
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.app{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(241, 238, 238);
+  height: 100vh;
+}
+
+
+
+/* Main_PAGE starts */
+.main_page{
+  width: 90%;
+  color: white;
+  background-color: black;
+  padding: 30px;
+  display: flex;
+  gap: 10px;
+  border-radius: 20px;
+  max-height: 900px;
+}
+.left-main_page,
+.middle-main_page,
+.right-main_page{
+  width: 30%;
+}
+/* Main_PAGE ends */
+
+.model_div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.model_img{
+  width: 300px;
+  height: 300px;
+}
+.graph_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  position: relative;
+}
+/* Chart starts */
+
+.component{
+  width: 550px;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.graph_outer_container{
+  position: relative;
+}
+.bigComponent{
+  position: absolute;
+  transform: translate(-70%, 30%);
+  scale: 1;
+  width: 900px;
+  cursor: pointer;
+  z-index: 11;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+.nomodal{
+  position: absolute;
+  transform: translate(-70%, 30%);
+  scale: 0;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+.line_container{
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+}
+.overlap{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.452);
+  z-index: 0;
+}
+.overlay{
+  display: none;
+}
+.bigComponent .Line{
+  z-index: 3;
+  background-color: white;
+}
+.component .Line{
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1);
+  background-color: rgba(255, 255, 255, 0.717);
+  border-radius: 10px;
+  
+}
+/* Chart ends */
