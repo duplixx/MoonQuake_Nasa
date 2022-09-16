@@ -1,19 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Environment, OrbitControls, OrthographicCamera, Preload, mesh } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Moon from "./components/mappedMoon";
 import Stars from "./components/stars";
 import Marks from './components/marks';
 import HomePage from "./components/MainPage"
+import Preloader from './components/Preloader';
 const App = () => {
   const [open, setOpen] = useState(false)
   const handleClick = () => {
     setOpen(prev => !prev)
   }
-  console.log(open)
+  const [loader, setLoader] = useState(false)
+  useEffect(() => {
+    setLoader(true)
+    setTimeout(() => {
+      setLoader(false)
+    }, 6000);
+  },[])
 
   return (
     <>
+    {loader === true ? <Preloader /> :
       <div className="w-full bg-black h-screen">
         <div className='home_page'>
 
@@ -38,6 +46,7 @@ const App = () => {
         </Canvas>
 
       </div>
+      }
     </>
   );
 }
