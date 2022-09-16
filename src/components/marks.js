@@ -10,16 +10,14 @@ export default function Marks() {
             var x = -(Math.sin(phi) * Math.cos(theta));
             var z =  (Math.sin(phi) * Math.sin(theta));
             var y =  (Math.cos(phi));
-            console.log(x,y,z)
-            
         }
+        // console.log(x,y,z)
         return (
             <>  
             <mesh visible position={[1.2+x, 0.2+y, 0.2+z]} layers={0} >
                 <sphereBufferGeometry args={[0.2, 32, 32]} />
                 <meshBasicMaterial color="red" />  
             </mesh>
-
             </>
         );
 
