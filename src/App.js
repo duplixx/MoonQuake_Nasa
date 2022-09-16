@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import Moon from "./components/mappedMoon";
 import Stars from "./components/stars";
 import MainPage from './MainPage';
+import Marks  from './components/marks';
 const App = () => {
 
   return (
@@ -24,7 +25,7 @@ const App = () => {
                 <directionalLight position={[10, -80, -80]} color={"black"} intensity={1}  />
                   <Moon />
                   <Stars/>
-                  
+                  <Marks/>
 
                 <Preload all />
               </OrthographicCamera>
