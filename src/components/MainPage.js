@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import About_apollo from "./components/About_apollo"
-import Graph from "./components/Graph"
-import Model from "./components/Model"
+import About_apollo from "./About_apollo"
+import Graph from "./Graph"
+import Model from "./Model"
 
 export default function MainPage() {
     const [modal, setModal] = useState(false)

@@ -1,8 +1,16 @@
 import { Sphere, meshBasicMaterial, sphereBufferGeometry, QuadraticBezierLine, mesh } from '@react-three/drei';
-import React from 'react';
+import React,{useState} from 'react';
+import {useSpring,a}from '@react-spring/three';
 import data from '../assets/data';
-import Rocket from './Rocket';
+import Pins from './Rocket';
+import Homepage from './MainPage';
+
 export default function Marks() {
+    const [isOpen,setOpen]=useState(false);
+    console.log(isOpen);
+    const {modal}=useSpring({
+        modal:isOpen ? null : <Homepage/>,
+    })
     // for (let i = 0; i < data.length; i++) {
     //     var lat = data[i].lat;
     //     var lon = data[i].lon;
@@ -12,6 +20,8 @@ export default function Marks() {
     //     var z = (Math.sin(phi) * Math.sin(theta));
     //     var y = (Math.cos(phi));
     // }
+   
+    
     const box = data.map(rocket =>{
         var lat = rocket.lat;
         var lon = rocket.lon;
@@ -21,7 +31,7 @@ export default function Marks() {
         var z = (Math.sin(phi) * Math.sin(theta));
         var y = (Math.cos(phi));
         return(
-            <Rocket x= {x} y= {y} z = {z}/>
+            <Pins x= {x} y= {y} z = {z} />
         )
     })
 
@@ -32,7 +42,9 @@ export default function Marks() {
                 <sphereBufferGeometry args={[0.2, 32, 32]} />
                 <meshBasicMaterial color="red" />
             </mesh> */}
-            {box}
+            <a.group modal={modal} onClick={()=>{setOpen(prev=>!prev)}}>{box}</a.group>
+                
+            
         </>
     );
 
