@@ -7,6 +7,7 @@ import Pins from './Rocket';
 export default function Marks(props) {
     
     const box = data.map(rocket =>{
+        //code to convert 2d coordinates to 3d coordinates
         var lat = rocket.lat;
         var lon = rocket.lon;
         var phi = (90 - lat) * (Math.PI / 180);
@@ -14,13 +15,16 @@ export default function Marks(props) {
         var x = -(Math.sin(phi) * Math.cos(theta));
         var z = (Math.sin(phi) * Math.sin(theta));
         var y = (Math.cos(phi));
+        // passing names in props
         var name=rocket.name;
+        
+        
         return(
-            <Pins key={rocket.name} onClick={props.onClick} x= {x} y= {y} z = {z} name={name} />
+            <Pins key={rocket.name} onClick={props.onClick} x={x} y= {y} z = {z} name={name} />
             // <mesh onClick={props.onClick} visible position={[1.1 + x, y, z]} layers={0}  >
             //     <sphereBufferGeometry args={[0.05, 35, 32]} />
             //     <meshBasicMaterial color="red" />
-            // </mesh> 
+            // </mesh>
         )
     })
 
@@ -31,7 +35,7 @@ export default function Marks(props) {
                 <sphereBufferGeometry args={[0.2, 32, 32]} />
                 <meshBasicMaterial color="red" />
             </mesh> */}
-            <group >{box}</group>
+            <group>{box}</group>
                 
             
         </>

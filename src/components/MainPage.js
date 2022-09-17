@@ -12,13 +12,13 @@ export default function MainPage(props) {
         <div className="main_page">
             <div className={modal === true ? "overlap" : "overlay"}></div>
             <div className="left-main_page">
-                <About_apollo />
+                <About_apollo  />
             </div>
             <div className="middle-main_page">
                 <Model />
             </div>
             <div className="right-main_page">
-                <Graph onClick={handleChange} change={modal} />
+                <Graph onClick={handleChange} change={modal}  />
             </div>
                 <button type="button" className="close-button" onClick={props.onClick}>
                     <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
