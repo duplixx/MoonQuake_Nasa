@@ -12,21 +12,17 @@ import data from '../assets/data';
 
 export default function MappedMoon() {
   const [isZoom, setIsZoom] = useState(false);
-  const {scale,markerPosition,rotation}=useSpring({
-      scale:isZoom ?  0.8: 1.0,
-      markerPosition:isZoom ? [0,0,0] : [0,0,2.5],
-  })
+  // const {scale,markerPosition,rotation}=useSpring({
+  //     scale:isZoom ?  0.8: 1.0,
+  //     markerPosition:isZoom ? [0,0,0] : [0,0,2.5],
+  // })
     const colorMap = useLoader(TextureLoader,moonTexture);
     const moonBumpMap= useLoader(TextureLoader,moonBumpTexture);
   return (
     <>
-        <a.group scale={scale} rotation={rotation} onClick={()=>{
-          setIsZoom(prev=>!prev)
-        }}>
         <Sphere visible args={[1, 100, 200]} scale={2} layers={0} >
             <meshPhongMaterial map={colorMap} bumpMap={moonBumpMap} roughness={5} bumpScale={0.02}/>
         </Sphere>
-        </a.group>
     </>
   )
 }

@@ -14,20 +14,26 @@ export default function Marks(props) {
         var x = -(Math.sin(phi) * Math.cos(theta));
         var z = (Math.sin(phi) * Math.sin(theta));
         var y = (Math.cos(phi));
+        var name=rocket.name;
         return(
-            // <Pins key={rocket.name} handleClick={handleClick} x= {x} y= {y} z = {z} />
-            <mesh onClick={props.onClick} visible position={[1.1 + x, y, z]} layers={0}  >
-                <sphereBufferGeometry args={[0.05, 35, 32]} />
-                <meshBasicMaterial color="red" />
-            </mesh>
+            <Pins key={rocket.name} onClick={props.onClick} x= {x} y= {y} z = {z} name={name} />
+            // <mesh onClick={props.onClick} visible position={[1.1 + x, y, z]} layers={0}  >
+            //     <sphereBufferGeometry args={[0.05, 35, 32]} />
+            //     <meshBasicMaterial color="red" />
+            // </mesh> 
         )
     })
 
     // console.log(x,y,z)
     return (
         <>
-            {box}
-                   
+            {/* <mesh visible position={[1.2 + x, 0.2 + y, 0.2 + z]} layers={0} >
+                <sphereBufferGeometry args={[0.2, 32, 32]} />
+                <meshBasicMaterial color="red" />
+            </mesh> */}
+            <group >{box}</group>
+                
+            
         </>
     );
 
