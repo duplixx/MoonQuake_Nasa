@@ -2,7 +2,7 @@ import { Sphere, meshBasicMaterial, sphereBufferGeometry, QuadraticBezierLine, m
 import React,{useState} from 'react';
 import data from '../assets/data';
 import HomePage from "./MainPage"
-import Pins from './Rocket';
+import Marker from './marker';
 
 export default function Marks(props) {
     
@@ -20,11 +20,22 @@ export default function Marks(props) {
         
         
         return(
-            <Pins key={rocket.name} onClick={props.onClick} x={x} y= {y} z = {z} name={name} />
-            // <mesh onClick={props.onClick} visible position={[1.1 + x, y, z]} layers={0}  >
-            //     <sphereBufferGeometry args={[0.05, 35, 32]} />
-            //     <meshBasicMaterial color="red" />
-            // </mesh>
+            // <Pins key={rocket.name} onClick={props.onClick} x={x} y= {y} z = {z} name={name} />
+            // // <mesh  visible position={[1.1 + x, y, z]} layers={0}  >
+            // //     <sphereBufferGeometry args={[0.05, 35, 32]} />
+            // //     <meshBasicMaterial color="red" />
+            // // </mesh>
+            <mesh visible position={[1.1+x, y,  z]} layers={0} onClick={props.onClick} >
+                    <sphereBufferGeometry args={[0.05, 35, 32]} />
+                    <meshBasicMaterial color="purple" />
+                    <group position={[-0.8+ x, y, z]} rotation={[0, 0, Math.PI]} layers={0} >
+                    <Marker rotation={[0, Math.PI / 2, Math.PI / 2]} castShadow={true}>
+                        <label className='absolute font-sm text-white p-2 border-4 border-lime-400 rounded-3xl  transform delay-150' for="html" onClick={()=>{
+                            console.log(name);
+                        }}>{name}</label>
+                    </Marker>
+                    </group>
+                </mesh>
         )
     })
 

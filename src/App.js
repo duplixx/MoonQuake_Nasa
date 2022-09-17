@@ -23,6 +23,12 @@ const App = () => {
     <>
     {loader === true ? <Preloader /> :
       <div className="w-full bg-black h-screen">
+          <div className='home_page'>
+
+            {open ?
+            <HomePage onClick={handleClick} /> : null
+            }
+            </div>
             <Canvas className="">
               <OrthographicCamera position={[0, 0, 0]} rotation={[0,10,0]} >
               <OrbitControls autoRotate={true} enableZoom={false} autoRotateSpeed={0.6} minPolarAngle={Math.PI / 1.8} maxPolarAngle={Math.PI / 1.8} />
@@ -30,7 +36,7 @@ const App = () => {
                 <directionalLight position={[190, 80, 10]} intensity={0.4}  />
                   <Moon />
                   <Stars/> 
-                  <Marks/> 
+                  <Marks onClick={handleClick}/> 
                 <Preload all />
               </OrthographicCamera>
             </Canvas>
