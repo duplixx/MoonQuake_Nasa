@@ -11,7 +11,7 @@ export default function Model() {
                 src={model}
                 auto-rotate
                 camera-controls
-                style={{ width: "600px", height: "600px", zIndex: "100" }}
+                style={{ width: "600px", height: "600px"}}
             >
             </model-viewer>
         </div>
