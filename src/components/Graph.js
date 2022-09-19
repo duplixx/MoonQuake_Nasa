@@ -76,8 +76,6 @@ export default function Graph(props) {
                 </div>
             </div>
             <div className="graph_container">
-                <h1>Graph Description</h1>
-                <p>Graph showing the average annual occurrence and equivalent energy release for earthquakes of different magnitudes. Plot is from the Incorporated Research Institutions for Seismology.</p>
                 <div className="component">
                     <Line className="Line" options={options1} onClick={props.onClick} data={data} />
                 </div>
