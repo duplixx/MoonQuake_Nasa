@@ -11,11 +11,6 @@ import data from '../assets/data';
 
 
 export default function MappedMoon() {
-  const [isZoom, setIsZoom] = useState(false);
-  // const {scale,markerPosition,rotation}=useSpring({
-  //     scale:isZoom ?  0.8: 1.0,
-  //     markerPosition:isZoom ? [0,0,0] : [0,0,2.5],
-  // })
     const colorMap = useLoader(TextureLoader,moonTexture);
     const moonBumpMap= useLoader(TextureLoader,moonBumpTexture);
   return (

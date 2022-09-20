@@ -1,7 +1,7 @@
 import { Sphere, meshBasicMaterial, sphereBufferGeometry, QuadraticBezierLine, mesh } from '@react-three/drei';
 import React,{useState} from 'react';
 import data from '../assets/data';
-import HomePage from "./MainPage"
+import HomePage from "./modal"
 import Marker from './marker';
 
 export default function Marks(props) {
@@ -25,7 +25,9 @@ export default function Marks(props) {
                     <meshBasicMaterial color="purple" />
                     <group position={[-0.8+ x, y, z]} rotation={[0, 0, Math.PI]} layers={0} >
                     <Marker rotation={[0, Math.PI / 2, Math.PI / 2]} castShadow={true}>
-                        <label className='absolute font-sm text-white p-2 border-4 border-lime-400 rounded-3xl  transform delay-150' for="html" onClick={props.onClick}>{name}</label>
+                        <h1  onClick={()=>{
+                            console.log(name);
+                        }}>{name}</h1>
                     </Marker>
                     </group>
                 </mesh>

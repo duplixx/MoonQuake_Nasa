@@ -4,7 +4,6 @@ import React from 'react';
 import galaxyTexture from '../assets/img/galaxy_4k.png';
 import { useLoader } from '@react-three/fiber';
 import { BackSide } from 'three';
-// import vertextShader from '../assets/shaders/vertex.glsl';
 
 
 
@@ -14,7 +13,7 @@ export default function MappedMoon() {
     <>  
         <mesh layers={1}>
           <Sphere args={[80, 64, 64]}>
-            <meshBasicMaterial map={colorMap} side={BackSide} transparent={true} />
+            <meshBasicMaterial map={colorMap} side={BackSide} transparent={true}/>
           </Sphere>
         </mesh>
     </>

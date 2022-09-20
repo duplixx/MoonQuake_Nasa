@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import Moon from "./components/mappedMoon";
 import Stars from "./components/stars";
 import Marks from './components/marks';
-import HomePage from "./components/MainPage"
+import HomePage from "./components/modal"
 import Preloader from './components/Preloader';
 const App = () => {
   const [open, setOpen] = useState(false)
