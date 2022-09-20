@@ -1,11 +1,19 @@
 import React from "react"
-import logo from "../images/pngegg.png"
+import model from "../assets/modal/rocket.glb"
 
 
 export default function Model() {
     return (
         <div className="model_div">
-            <img className="model_img" src={logo}/>
+            <model-viewer
+                ar
+                modes="scene-viewer quick-look webxr"
+                src={model}
+                auto-rotate
+                camera-controls
+                style={{ width: "600px", height: "600px"}}
+            >
+            </model-viewer>
         </div>
     )
 }
