@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import "./Preloader.css"
+import "./Preloader.scss"
 import loader from "../images/preloader.mp4"
 
 export default function Preloader() {
