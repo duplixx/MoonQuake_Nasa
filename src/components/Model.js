@@ -6,11 +6,9 @@ export default function Model() {
     return (
         <div className="model_div">
             <model-viewer
-                ar
-                modes="scene-viewer quick-look webxr"
+                camera-orbit="-30deg auto auto" max-camera-orbit="auto 100deg auto" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom 
                 src={model}
                 auto-rotate
-                camera-controls
                 style={{ width: "600px", height: "600px"}}
             >
             </model-viewer>

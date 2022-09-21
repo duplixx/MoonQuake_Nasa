@@ -16,7 +16,6 @@ export default function Marks(props) {
         var z = (Math.sin(phi) * Math.sin(theta));
         var y = (Math.cos(phi));
         // passing names in props
-<<<<<<< Updated upstream
         var name = rocket.name;
 
 
@@ -25,17 +24,6 @@ export default function Marks(props) {
                 <sphereBufferGeometry args={[0.05, 35, 32]} />
                 <meshBasicMaterial color="purple" />
                 <group position={[-0.8 + x, y, z]} rotation={[0, 0, Math.PI]} layers={0} >
-=======
-        var name=rocket.name;
-        
-        
-        return(
-            <mesh visible position={[1.1+x, y,  z]} layers={0} onClick={props.onClick} >
-                    <sphereBufferGeometry args={[0.05, 35, 32]} />
-                    
-                    <meshBasicMaterial color="purple" />
-                    <group position={[-0.8+ x, y, z]} rotation={[0, 0, Math.PI]} layers={0} >
->>>>>>> Stashed changes
                     <Marker rotation={[0, Math.PI / 2, Math.PI / 2]} castShadow={true}>
                         <h1 onClick={props.onClick}>{name}</h1>
                     </Marker>
