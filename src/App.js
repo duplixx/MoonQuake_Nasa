@@ -32,11 +32,11 @@ const App = () => {
             <Canvas className="">
               <OrthographicCamera position={[0, 0, 0]} rotation={[0,10,0]} >
               <OrbitControls autoRotate={true} enableZoom={false} autoRotateSpeed={0.6} minPolarAngle={Math.PI / 1.8} maxPolarAngle={Math.PI / 1.8} />
-                <ambientLight intensity="0.05" enableShadow={true}  dropShadows={true}/>
+                <ambientLight intensity="0.06" enableShadow={true}  dropShadows={true}/>
                 <directionalLight position={[190, 80, 10]} intensity={0.4}  />
                   <Moon />
                   <Stars/> 
-                  <Marks onClick={handleClick}/> 
+                  <Marks onClick={handleClick}/>
                 <Preload all />
               </OrthographicCamera>
             </Canvas>
