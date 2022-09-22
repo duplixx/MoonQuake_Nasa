@@ -21,25 +21,25 @@ ChartJS.register(
 );
 export default function Graph(props) {
     const [quake, setQuake] = React.useState([])
-    const axios = require("axios");
+    // const axios = require("axios");
 
-    const options = {
-        method: 'GET',
-        url: 'https://global-earthquake-watch.p.rapidapi.com/significant',
-        headers: {
-            'X-RapidAPI-Key': '4ff4ac9c02mshaab61d445c4c199p1a0808jsn49877f43f632',
-            'X-RapidAPI-Host': 'global-earthquake-watch.p.rapidapi.com'
-        }
-    };
-    React.useEffect(() => {
+    // const options = {
+    //     method: 'GET',
+    //     url: 'https://global-earthquake-watch.p.rapidapi.com/significant',
+    //     headers: {
+    //         'X-RapidAPI-Key': '4ff4ac9c02mshaab61d445c4c199p1a0808jsn49877f43f632',
+    //         'X-RapidAPI-Host': 'global-earthquake-watch.p.rapidapi.com'
+    //     }
+    // };
+    // React.useEffect(() => {
 
-        axios.request(options).then(function (response) {
-            setQuake(response.data);
-        }).catch(function (error) {
-            console.error(error);
-        });
-        // eslint-disable-next-line
-    }, [])
+    //     axios.request(options).then(function (response) {
+    //         setQuake(response.data);
+    //     }).catch(function (error) {
+    //         console.error(error);
+    //     });
+    //     // eslint-disable-next-line
+    // }, [])
     const options1 = {
         responsive: true,
         plugins: {
@@ -52,13 +52,13 @@ export default function Graph(props) {
             },
         },
     };
-    const labels = quake.map((earth) => earth.date);
+    const labels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
     const data = {
         labels,
         datasets: [
             {
                 label: 'Apollo 11',
-                data: quake.map((earth) => earth.magnitude),
+                data: [65, 59, 80, 81, 56, 55, 40],
                 borderColor: 'red',
                 backgroundColor: 'red',
                 borderWidth: 0.6,

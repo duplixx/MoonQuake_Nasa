@@ -135,7 +135,7 @@ code {
   /* transform: translate(-65%, 15%); */
   scale: 1;
   cursor: pointer;
-  z-index: 11;
+  z-index: 120;
   border-radius: 20px;
   transition: all 0.3s ease-in-out;
 }
