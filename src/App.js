@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import Moon from "./components/mappedMoon";
 import Stars from "./components/stars";
 import Marks from './components/marks';
-import HomePage from "./components/modal"
+import Modal from "./components/MainPage"
 import Preloader from './components/Preloader';
 import SearchBar from './components/searchBar';
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
           <div className='home_page'>
 
             {open ?
-            <HomePage onClick={handleClick} /> : null
+            <Modal onClick={handleClick} /> : null
             }
             </div>
             <SearchBar />

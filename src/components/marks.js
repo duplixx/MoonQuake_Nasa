@@ -1,7 +1,6 @@
 import { Sphere, meshBasicMaterial, sphereBufferGeometry, QuadraticBezierLine } from '@react-three/drei';
 import React, { useState } from 'react';
 import data from '../assets/data';
-import HomePage from "./modal"
 import Marker from './marker';
 import searchBar from './searchBar';
 

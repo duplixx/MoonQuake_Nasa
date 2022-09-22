@@ -3,7 +3,7 @@ import React from 'react'
 export default function searchBar() {
     return (
         <>
-            <span className="absolute    mt-8 ml-8 z-5" >
+            <span className="absolute mt-8 ml-8 z-5" >
                 <div className="z-90 xl:w-96">
                     <input
                         type="search"
