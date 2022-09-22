@@ -8,6 +8,7 @@ export default function MainPage(props) {
     const [modal, setModal] = useState(false)
     const handleChange = () => {
         setModal(!modal)
+        
     }
     return (
         <div className="main_page">

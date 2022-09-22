@@ -6,6 +6,7 @@ import Stars from "./components/stars";
 import Marks from './components/marks';
 import HomePage from "./components/modal"
 import Preloader from './components/Preloader';
+import SearchBar from './components/searchBar';
 const App = () => {
   const [open, setOpen] = useState(false)
   const handleClick = () => {
@@ -13,7 +14,7 @@ const App = () => {
   }
   const [loader, setLoader] = useState(false)
   useEffect(() => {
-    setLoader(true)
+    setLoader(false)
     setTimeout(() => {
       setLoader(false)
     }, 25000);
@@ -29,6 +30,7 @@ const App = () => {
             <HomePage onClick={handleClick} /> : null
             }
             </div>
+            <SearchBar />
             <Canvas className="">
               <OrthographicCamera position={[0, 0, 0]} rotation={[0,10,0]} >
               <OrbitControls autoRotate={true} enableZoom={false} autoRotateSpeed={0.6} minPolarAngle={Math.PI / 1.8} maxPolarAngle={Math.PI / 1.8} />
@@ -39,6 +41,7 @@ const App = () => {
                   <Marks onClick={handleClick}/>
                 <Preload all />
               </OrthographicCamera>
+              
             </Canvas>
             
       </div>

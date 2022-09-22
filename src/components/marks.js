@@ -1,8 +1,9 @@
-import { Sphere, meshBasicMaterial, sphereBufferGeometry, QuadraticBezierLine, mesh } from '@react-three/drei';
+import { Sphere, meshBasicMaterial, sphereBufferGeometry, QuadraticBezierLine } from '@react-three/drei';
 import React, { useState } from 'react';
 import data from '../assets/data';
 import HomePage from "./modal"
 import Marker from './marker';
+import searchBar from './searchBar';
 
 export default function Marks(props) {
 
@@ -23,7 +24,7 @@ export default function Marks(props) {
             <mesh visible position={[1.1 + x, y, z]} layers={0}  >
                 <sphereBufferGeometry args={[0.05, 35, 32]} />
                 <meshBasicMaterial color="purple" />
-                <group position={[-0.8 + x, y, z]} rotation={[0, 0, Math.PI]} layers={0} >
+                <group position={[-0.8 + x, y, z]} rotation={[0, 0, Math.PI]} layers={1} >
                     <Marker rotation={[0, Math.PI / 2, Math.PI / 2]} castShadow={true}>
                         <h1 onClick={props.onClick}>{name}</h1>
                     </Marker>
@@ -34,8 +35,6 @@ export default function Marks(props) {
     return (
         <>
             <group>{box}</group>
-
-
         </>
     );
 
