@@ -1,35 +1,29 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import "./Preloader.scss"
-export default function Preloader() {
-    return(
-        <>
-        <div className="game-loader">
-  <div className="game-loader__planet">
-    <div className="loader-radius1" />
-    <div className="loader-radius2" />
-    <div className="loader-radius3" />
-    <div className="loader-radius4" />
-    <div className="loader-mini1" />
-    <div className="loader-mini2" />
-    <div className="loader-mini3" />
-    <div className="loader-mini4" />
-    <svg className="svg" xmlns="http://www.w3.org/2000/svg" version="1.1">
-      <defs>
-        <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation={15} result="blur" />
-          <feColorMatrix
-            in="blur"
-            mode="matrix"
-            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -7"
-            result="goo"
-          />
-          <feBlend in="SourceGraphic" in2="goo" />
-        </filter>
-      </defs>
-    </svg>
-  </div>
-</div>
+import loader from "../images/preloader.mp4"
 
-        </>
-    )
+export default function Preloader() {
+  const [count, setCount] = useState(0)
+  useEffect(() => {
+    let j = 1
+    setInterval(() => {
+      for (let i = 0; i <= j; i++) {
+        setCount(i)
+      }
+      j = j + 1
+    }, 1000);
+  }, count)
+  return (
+    <>
+      <div id="prelaoder" >
+        <video id="background-video" autoPlay loop muted>
+          <source src={loader} type="video/mp4" />
+        </video>
+        <div className="loading_content">
+          { count < 15 && <h1 className="scripts">Loading Scripts... {count}/15</h1>}
+          {count >= 15 && <h1 className="model">Loading Model... {count-15}/9</h1>}
+        </div>
+      </div>
+    </>
+  )
 }
