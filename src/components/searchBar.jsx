@@ -1,6 +1,16 @@
-import React from 'react'
+import React,{ useState } from 'react'
+import data from '../assets/data';
+import { useSpring, UseSpring } from '@react-spring/three';
 
-export default function searchBar() {
+export default function Search() {
+    const [value, setValue] = useState("");
+    const onChange = (event) => {
+        setValue(event.target.value);
+      };
+    
+        const onSearch = (searchTerm) => {
+        setValue(searchTerm);
+      };
     return (
         <>
             <span className=" mt-12 ml-8 z-5" >
@@ -25,8 +35,32 @@ export default function searchBar() {
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                         id="exampleSearch"
                         placeholder="Search Landings"
+                        value={value} onChange={onChange}
                     />
                 </span>
+                <div className="bg-slate-300 flex flex-col rounded-b-2xl font-semibold text-center opacity-70  ">
+          {data
+            .filter((item) => {
+              const searchTerm = value.toLowerCase();
+              const Apollo = item.name.toLowerCase();
+
+              return (
+                searchTerm &&
+                Apollo.startsWith(searchTerm) &&
+                Apollo !== searchTerm
+              );
+            })
+            .slice(0, 10)
+            .map((item) => (
+              <div
+                onClick={() => onSearch(item.name)}
+                className="hover:opacity-90 opacity-40 text-start hover:text-bold "
+                key={item.name}
+              >
+                {item.name}
+              </div>
+            ))}
+        </div>
             </span>
         </>
     )
