@@ -5,13 +5,14 @@ import Graph from "./Graph"
 import Model from "./Model"
 
 export default function MainPage(props) {
-    const [modal, setModal] = useState(false)
+    const [modal, setModal] = useState(false);
+    const [isActive, setIsActive] = useState(false);
     const handleChange = () => {
         setModal(!modal)
     }
     return (
         <div className="main_page">
-            <div className={modal === true ? "overlap" : "overlay"}></div>
+            {/* <div className={modal === true ? "overlap" : "overlay"}></div> */}
                 {/* <About_apollo  /> */}
                 <img className="logo_image" src={logo} alt="logo" />
                 <h1 className="about_title">Apollo 11</h1>
