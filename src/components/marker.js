@@ -9,7 +9,7 @@ export default function Marker({ children, ...props }) {
         occlude
         onOcclude={occlude}
         distanceFactor={2.5}
-        zIndexRange={[100, 0]}
+        zIndexRange={[10, 0]}
         sprite={true}
         center
         className='text-white text-2xl font-semibold w-[180px] rounded-2xl border-lime-300 border-4 px-3 py-1 bg-opacity-65 bg-gray-400'
