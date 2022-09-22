@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { Environment, OrbitControls, OrthographicCamera, Preload, mesh } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Moon from "./components/mappedMoon";
@@ -25,13 +25,17 @@ const App = () => {
     {loader === true ? <Preloader /> :
       <div className="w-full bg-black h-screen">
           <div className='home_page'>
-
             {open ?
             <Modal onClick={handleClick} /> : null
             }
+            
             </div>
-            <SearchBar />
+            <div className='absolute flex justify-start align-center z-10 h-screen '>
+             <SearchBar />
+            </div>
             <Canvas className="">
+              <Suspense >
+            
               <OrthographicCamera position={[0, 0, 0]} rotation={[0,10,0]} >
               <OrbitControls autoRotate={true} enableZoom={false} autoRotateSpeed={0.6} minPolarAngle={Math.PI / 1.8} maxPolarAngle={Math.PI / 1.8} />
                 <ambientLight intensity="0.06" enableShadow={true}  dropShadows={true}/>
@@ -41,7 +45,7 @@ const App = () => {
                   <Marks onClick={handleClick}/>
                 <Preload all />
               </OrthographicCamera>
-              
+              </Suspense> 
             </Canvas>
             
       </div>
