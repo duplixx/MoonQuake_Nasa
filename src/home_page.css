@@ -1,0 +1,80 @@
+/* Home Page css starts */
+body{
+  overflow: visible;
+}
+.home_page_nav {
+  padding: 20px;
+  color: white;
+  display: flex;
+background-color: transparent;
+  align-items: center;
+  justify-content: space-between;
+
+z-index: 1;
+}
+
+.canvas_button {
+  font-size: 25px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.4s ease-in;
+}
+
+.canvas_button h1 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.nav-sections ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-sections ul li {
+  margin-left: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.hero_section{
+  color: white;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 10px;
+  min-height: 90vh;
+  position: relative;
+  overflow: hidden;
+}
+.hero_section .title{
+  text-transform: uppercase;
+  font-size: 130px;
+}
+.title_div{
+  z-index: 3;
+  padding: 0 10px;
+}
+.hero_vid{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.demo h1{
+color: white;
+font-size: 60px;
+}
+/* Home Page css ends*/

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {  Html} from '@react-three/drei';
-import { Annotation } from 'react-simple-maps';
+// import { Annotation } from 'react-simple-maps';
 
 export default function Marker({ children, ...props }) {
     const [occluded, occlude] = useState()

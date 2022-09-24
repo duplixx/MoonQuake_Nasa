@@ -1,27 +1,20 @@
 import React, { Suspense, useEffect, useState } from 'react';
-import { Environment, OrbitControls, OrthographicCamera, Preload, mesh } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import Moon from "./components/mappedMoon";
-import Stars from "./components/stars";
-import Marks from './components/marks';
-import Modal from "./components/MainPage"
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Preloader from './components/Preloader';
-import SearchBar from './components/searchBar';
+import Canvas_moon from './Pages/Canvas_moon';
+import Home_page from './Pages/Home_page';
 const App = () => {
-  const [open, setOpen] = useState(false)
-  const handleClick = () => {
-    setOpen(prev => !prev)
-  }
   const [loader, setLoader] = useState(false)
   useEffect(() => {
     setLoader(false)
     setTimeout(() => {
       setLoader(false)
     }, 25000);
-  },[])
+  }, [])
 
   return (
     <>
+<<<<<<< HEAD
     {loader === true ? <Preloader /> :
       <div className="w-full bg-black h-screen">
           <div className='home_page'>
@@ -49,6 +42,21 @@ const App = () => {
             </Canvas>
             
       </div>
+=======
+      {loader === true ? <Preloader /> :
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/duplixx/MoonQuake_Nasa"
+              element={<Canvas_moon />}
+            />
+            <Route
+            path='/homepage'
+            element={<Home_page/>}
+            />
+          </Routes>
+        </BrowserRouter>
+>>>>>>> ca72510c01de2bcb18592382e72b71df3f355b8a
       }
     </>
   );
