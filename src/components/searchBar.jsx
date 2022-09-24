@@ -1,16 +1,33 @@
 import React,{ useState } from 'react'
 import data from '../assets/data';
-import { useSpring, UseSpring } from '@react-spring/three';
+import { useSpring } from '@react-spring/three';
+import { OrbitControls, OrthographicCamera } from "@react-three/drei";
 
-export default function Search() {
+export default function Search(props) {
+    //code to convert 2d coordinates to 3d coordinates
+    var lat = data.lat;
+    var lon = data.lon;
+    var phi = (90 - lat) * (Math.PI / 180);
+    var theta = (lon + 180) * (Math.PI / 180);
+    var x = -(Math.sin(phi) * Math.cos(theta));
+    var z = (Math.sin(phi) * Math.sin(theta));
+    var y = (Math.cos(phi));
+
     const [value, setValue] = useState("");
     const onChange = (event) => {
         setValue(event.target.value);
       };
     
-        const onSearch = (searchTerm) => {
+    const onSearch = (searchTerm) => {
         setValue(searchTerm);
+        if(searchTerm===data.name){
+           
+        }
       };
+      
+    const {rotation}= useSpring({
+        rotation:[1.1 + x, y, z]
+    })
     return (
         <>
             <span className=" mt-12 ml-8 z-5" >
@@ -35,9 +52,10 @@ export default function Search() {
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                         id="exampleSearch"
                         placeholder="Search Landings"
-                        value={value} onChange={onChange}
+                        value={value} onChange={onChange} 
                     />
                 </span>
+                
                 <div className="bg-slate-300 flex flex-col rounded-b-2xl font-semibold text-center opacity-70  ">
           {data
             .filter((item) => {
