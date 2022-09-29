@@ -2,4 +2,6 @@ Moonquake challenge statement provided by NASA
 
 NASA Space Apps
 
-![Logo](https://cdn.dribbble.com/users/342629/screenshots/13533646/media/c1d0f68e92a0823b660794e3dea0d068.mp4)
+
+https://user-images.githubusercontent.com/90516956/192940633-94c5278c-55d8-45b2-b754-be6f14072411.mp4
+
